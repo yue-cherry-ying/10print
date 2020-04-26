@@ -57,15 +57,16 @@ const block = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11]
 
 let j = 0
 function print() {
-  setTimeout(print, 1000/2)
-  let output = '\x1b[97m\x1b[40m│𝄞¾  '
+  setTimeout(print, 1000 / 2)
+  let output = '\x1b[97m\x1b[40m │𝄞¾  '
   if (j % 2 == 0) {
     for (let i = 0; i < w / 5 - 2; i++) {
       let b = Math.floor(Math.random() * block.length)
       output += block[b]
     }
   } else {
-    output = ' '
+    empty = '\x1b[40m '
+    output = empty.repeat(w)
   }
   j++
   console.log(output)
